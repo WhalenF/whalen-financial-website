@@ -70,10 +70,10 @@ export default function MoneyPrism() {
         <Reveal variant="right" delay="d2">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {zones.map((z) => (
-              <div key={z.cls} style={{
+              <div key={z.cls} className={`prism-zone prism-${z.cls}`} style={{
                 padding: "30px 36px", borderRadius: 4,
                 background: z.bg, borderLeft: `4px solid ${z.border}`,
-                transition: "transform .3s", cursor: "default",
+                cursor: "default",
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
                   <div style={{ width: 9, height: 9, borderRadius: "50%", background: z.color, flexShrink: 0 }} />
@@ -98,6 +98,15 @@ export default function MoneyPrism() {
       </div>
 
       <style>{`
+        .prism-zone {
+          transition: transform .55s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-left-color .55s cubic-bezier(0.16, 1, 0.3, 1),
+                      box-shadow .55s cubic-bezier(0.16, 1, 0.3, 1),
+                      background .55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .prism-blue:hover  { transform: translateX(10px); border-left-color: #33bbee !important; background: rgba(0,153,204,.22) !important; box-shadow: -4px 0 20px rgba(0,153,204,.18); }
+        .prism-green:hover { transform: translateX(10px); border-left-color: #40c87a !important; background: rgba(46,158,94,.22) !important; box-shadow: -4px 0 20px rgba(46,158,94,.18); }
+        .prism-red:hover   { transform: translateX(10px); border-left-color: #e05a5a !important; background: rgba(201,64,64,.22) !important; box-shadow: -4px 0 20px rgba(201,64,64,.18); }
         @media(max-width:1100px){
           .prism-layout{grid-template-columns:1fr!important;gap:44px!important}
           #money-prism{padding:80px 24px!important}
