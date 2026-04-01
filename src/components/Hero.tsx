@@ -1,5 +1,33 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
+function CountUp({ to, duration = 1100, delay = 880 }: { to: number; duration?: number; delay?: number }) {
+  const [value, setValue] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (started.current) return;
+      started.current = true;
+      const startTime = performance.now();
+      const tick = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out quart: starts fast, decelerates nicely at the end
+        const eased = 1 - Math.pow(1 - progress, 4);
+        setValue(Math.round(eased * to));
+        if (progress < 1) requestAnimationFrame(tick);
+        else setValue(to);
+      };
+      requestAnimationFrame(tick);
+    }, delay);
+    return () => clearTimeout(timeout);
+  }, [to, duration, delay]);
+
+  return <>{value}</>;
+}
+
 export default function Hero() {
   return (
     <section id="hero" style={{
@@ -66,16 +94,17 @@ export default function Hero() {
         className="animate-fade-up delay-800 hero-stats"
       >
         {[
-          { num: "50", sup: "+", label: "Years of Experience" },
-          { num: "5", sup: "", label: "Planning Disciplines" },
-          { num: "1", sup: "", label: "Integrated Plan" },
+          { to: 50, sup: "+", label: "Years of Experience" },
+          { to: 5,  sup: "",  label: "Planning Disciplines" },
+          { to: 1,  sup: "",  label: "Integrated Plan" },
         ].map((s) => (
           <div key={s.label}>
             <div style={{
               fontFamily: "var(--font-display)", fontSize: 44,
               fontWeight: 300, color: "#fff", lineHeight: 1,
             }}>
-              {s.num}<span style={{ color: "#0099CC" }}>{s.sup}</span>
+              <CountUp to={s.to} />
+              <span style={{ color: "#0099CC" }}>{s.sup}</span>
             </div>
             <div style={{
               fontSize: 11, fontWeight: 500, letterSpacing: ".11em",
