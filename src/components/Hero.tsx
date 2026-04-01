@@ -43,7 +43,7 @@ export default function Hero() {
         }}
           className="animate-fade-up delay-320"
         >
-          <strong style={{ color: "#0099CC" }}>WHALEN</strong> is a digital-first wealth management firm serving families nationwide. Investment management, retirement income, tax planning, estate planning, and asset protection&nbsp;&mdash; in one integrated plan built around your life.
+          <strong style={{ color: "#0099CC" }}>WHALEN</strong>{" "}is a digital-first wealth management firm serving families nationwide. Investment management, retirement income, tax planning, estate planning, and asset protection&nbsp;&mdash; in one integrated plan built around your life.
         </p>
 
         <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}
