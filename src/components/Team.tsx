@@ -40,7 +40,7 @@ export default function Team() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="team-grid">
         {teamMembers.map((m, i) => (
-          <Reveal key={`${m.initials}-${i}`} delay={["","d1","d2","d3"][i % 4] as any}>
+          <Reveal key={`${m.initials}-${i}`} variant="scale" delay={["","d1","d2","d3","d4","d5"][i % 6] as any}>
             <div style={{
               background: "var(--card)", borderRadius: 4, overflow: "hidden",
               boxShadow: "var(--shadow)", border: "1px solid var(--rule)",

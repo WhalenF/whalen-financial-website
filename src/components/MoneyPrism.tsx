@@ -40,8 +40,8 @@ export default function MoneyPrism() {
   return (
     <section id="money-prism" style={{ background: "var(--navy)", color: "#fff", padding: "112px 56px", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "relative", zIndex: 2 }}>
-        <Reveal><div className="sec-eyebrow" style={{ color: "var(--teal)" }}>Our Proprietary Framework</div></Reveal>
-        <Reveal delay="d1">
+        <Reveal variant="blur"><div className="sec-eyebrow" style={{ color: "var(--teal)" }}>Our Proprietary Framework</div></Reveal>
+        <Reveal variant="blur" delay="d1">
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(38px,4vw,60px)", fontWeight: 300, lineHeight: 1.1, color: "#fff", letterSpacing: "-.01em" }}>
             The Money Prism<br /><em style={{ fontStyle: "italic", color: "var(--teal)" }}>Retirement Strategy</em>
           </h2>
@@ -50,24 +50,24 @@ export default function MoneyPrism() {
 
       <div style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 88, alignItems: "center", marginTop: 64 }} className="prism-layout">
         <div>
-          <Reveal delay="d2">
+          <Reveal variant="left" delay="d2">
             <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.82, color: "rgba(255,255,255,.7)", marginTop: 18 }}>
               Most portfolios are designed for accumulation. Retirement demands something different — a deliberate, time-segmented strategy that delivers income when you need it, growth when you don&rsquo;t, and certainty throughout.
             </p>
           </Reveal>
-          <Reveal delay="d2">
+          <Reveal variant="left" delay="d3">
             <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.82, color: "rgba(255,255,255,.7)", marginTop: 16 }}>
               The Money Prism divides your retirement assets into three zones based on time horizon. Each zone has a distinct purpose, a distinct risk profile, and a distinct set of tools. Together, they form a complete retirement income machine.
             </p>
           </Reveal>
-          <Reveal delay="d3">
+          <Reveal variant="left" delay="d4">
             <a href="#cta" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 12, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--teal)", textDecoration: "none", marginTop: 32, transition: "gap .2s" }}>
               See how your plan would look →
             </a>
           </Reveal>
         </div>
 
-        <Reveal delay="d2">
+        <Reveal variant="right" delay="d2">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {zones.map((z) => (
               <div key={z.cls} style={{

@@ -11,6 +11,7 @@ export default function Book() {
     <section id="book" style={{ background: "var(--warm)", padding: "112px 56px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 88, alignItems: "center" }} className="book-layout">
         {/* Book visual */}
+        <Reveal variant="left">
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ position: "relative" }}>
             {/* Spine */}
@@ -51,23 +52,24 @@ export default function Book() {
             </div>
           </div>
         </div>
+        </Reveal>
 
         {/* Content */}
         <div>
-          <Reveal><div className="sec-eyebrow">The Book</div></Reveal>
-          <Reveal delay="d1">
+          <Reveal variant="right"><div className="sec-eyebrow">The Book</div></Reveal>
+          <Reveal variant="right" delay="d1">
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(38px,4vw,60px)", fontWeight: 300, lineHeight: 1.1, color: "var(--ink)", letterSpacing: "-.01em", marginBottom: 18 }}>
               <em style={{ fontStyle: "italic", color: "var(--teal)" }}>Confessions</em> of a<br />Wealth Manager
             </h2>
           </Reveal>
-          <Reveal delay="d2">
+          <Reveal variant="right" delay="d2">
             <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.8, color: "var(--text-mid)", marginBottom: 28 }}>
               The wealth management industry is full of jargon, conflicts of interest, and advice designed to benefit advisors — not clients. This book changes that.
             </p>
           </Reveal>
 
           {bullets.map((b, i) => (
-            <Reveal key={i} delay={["d2","d3","d4"][i] as any}>
+            <Reveal key={i} variant="right" delay={["d2","d3","d4"][i] as any}>
               <div style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
                 <div style={{ width: 4, height: 4, borderRadius: "50%", background: "var(--teal)", flexShrink: 0, marginTop: 9 }} />
                 <div style={{ fontSize: 16, fontWeight: 300, color: "var(--text-mid)", lineHeight: 1.75 }}>{b}</div>
@@ -75,7 +77,7 @@ export default function Book() {
             </Reveal>
           ))}
 
-          <Reveal delay="d3">
+          <Reveal variant="right" delay="d4">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center", marginTop: 6 }}>
               <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer" className="btn-primary">
                 Get a Free Copy

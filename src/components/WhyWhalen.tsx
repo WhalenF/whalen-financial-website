@@ -23,7 +23,7 @@ export default function WhyWhalen() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 88, alignItems: "start", marginTop: 56 }} className="why-layout">
         <div>
           {pillars.map((p, i) => (
-            <Reveal key={p.num} delay={["","d1","d2","d3","d4"][i] as any}>
+            <Reveal key={p.num} variant="left" delay={["","d1","d2","d3","d4"][i] as any}>
               <div style={{
                 padding: "28px 0", borderBottom: "1px solid var(--rule)",
                 display: "grid", gridTemplateColumns: "44px 1fr", gap: 18, alignItems: "start",
@@ -40,7 +40,7 @@ export default function WhyWhalen() {
         </div>
 
         <div style={{ position: "sticky", top: 100 }}>
-          <Reveal>
+          <Reveal variant="right">
             <div style={{ background: "var(--navy)", padding: "52px 44px", borderRadius: 4, position: "relative", overflow: "hidden" }}>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 110, fontWeight: 300, color: "rgba(0,153,204,.14)", lineHeight: .6, position: "absolute", top: 20, left: 32, pointerEvents: "none" }}>&ldquo;</div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 27, fontWeight: 300, fontStyle: "italic", color: "#fff", lineHeight: 1.52, position: "relative", zIndex: 1 }}>
@@ -60,7 +60,7 @@ export default function WhyWhalen() {
               { num: "3×", sup: "", label: "Annual Plan Reviews" },
               { num: "1", sup: "", label: "Integrated Plan Per Client" },
             ].map((m) => (
-              <Reveal key={m.label}>
+              <Reveal key={m.label} variant="scale">
                 <div style={{ background: "var(--card)", padding: "28px 24px", borderRadius: 4, border: "1px solid var(--rule)", boxShadow: "var(--shadow)" }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 44, fontWeight: 300, color: "var(--ink)", lineHeight: 1 }}>
                     {m.num}<sup style={{ fontSize: 20, verticalAlign: "super" }}>{m.sup}</sup>

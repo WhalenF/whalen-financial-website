@@ -34,7 +34,7 @@ export default function Reviews() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, maxWidth: 1100, margin: "0 auto" }} className="reviews-grid">
         {reviews.map((r, i) => (
-          <Reveal key={r.initials} delay={["","d1","d2"][i] as any}>
+          <Reveal key={r.initials} variant="scale" delay={["","d1","d2"][i] as any}>
             <div style={{
               background: "var(--card)", borderRadius: 4, padding: "36px 32px",
               boxShadow: "var(--shadow)", border: "1px solid var(--rule)",

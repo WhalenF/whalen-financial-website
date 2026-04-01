@@ -6,7 +6,7 @@ export default function Pledge() {
       <div style={{ position: "absolute", top: "-40%", left: "50%", transform: "translateX(-50%)", width: 700, height: 700, background: "radial-gradient(circle,rgba(0,153,204,.12) 0%,transparent 70%)", pointerEvents: "none" }} />
 
       <div style={{ position: "relative", zIndex: 2, maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
-        <Reveal>
+        <Reveal variant="blur">
           <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(0,153,204,.12)", border: "2px solid rgba(0,153,204,.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 32px" }}>
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
               <path d="M18 3 L31 9 L31 19 C31 26.5 25 32.5 18 35 C11 32.5 5 26.5 5 19 L5 9 Z" stroke="#0099CC" strokeWidth="2"/>
@@ -15,7 +15,7 @@ export default function Pledge() {
           </div>
         </Reveal>
 
-        <Reveal><div className="sec-eyebrow center" style={{ color: "var(--teal)" }}>Our Client Commitment</div></Reveal>
+        <Reveal variant="blur"><div className="sec-eyebrow center" style={{ color: "var(--teal)" }}>Our Client Commitment</div></Reveal>
 
         <Reveal delay="d1">
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(38px,4vw,58px)", fontWeight: 300, color: "#fff", lineHeight: 1.1, marginBottom: 24 }}>
@@ -29,7 +29,7 @@ export default function Pledge() {
           </p>
         </Reveal>
 
-        <Reveal delay="d2">
+        <Reveal variant="scale" delay="d2">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2, marginBottom: 48 }} className="pledge-items">
             {[
               { icon: "100%", title: "Transparent, Always", body: "We are legally and ethically obligated to put your interests first — no exceptions, no commissions, no hidden incentives." },

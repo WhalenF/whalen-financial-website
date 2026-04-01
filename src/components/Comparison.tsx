@@ -38,7 +38,7 @@ export default function Comparison() {
         </Reveal>
       </div>
 
-      <Reveal delay="d1">
+      <Reveal variant="scale" delay="d1">
         <div style={{ maxWidth: 900, margin: "0 auto", borderRadius: 6, overflow: "hidden", boxShadow: "var(--shadow-lg)", border: "1px solid var(--rule)" }}>
           {/* Header */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "var(--navy)" }} className="comp-header">
