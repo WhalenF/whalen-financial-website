@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const complianceLinks = [
   { label: "Form CRS", href: "https://app.box.com/file/2159109164775?s=ll8b4o2hoyik8a2mvq614lzlexmrmub3" },
   { label: "Privacy Policy", href: "https://app.box.com/file/2159120667968?s=q69csgtxxyaa6n7moh55a4xcjc912xob" },
@@ -21,13 +23,14 @@ export default function Footer() {
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 60, paddingBottom: 52, borderBottom: "1px solid rgba(255,255,255,.07)", marginBottom: 36 }} className="footer-top">
         {/* Brand */}
         <div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <path d="M16 3 L28 9 L28 20 C28 26 22.5 30.5 16 32 C9.5 30.5 4 26 4 20 L4 9 Z" fill="none" stroke="#0099CC" strokeWidth="1.8"/>
-              <path d="M10 16 L14 22 L22 10" stroke="#0099CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, letterSpacing: ".04em", color: "#fff", textTransform: "uppercase" }}>WHALEN</span>
-            <span style={{ fontSize: 10, fontWeight: 300, letterSpacing: ".14em", color: "rgba(255,255,255,.3)", textTransform: "uppercase" }}>Financial</span>
+          <div style={{ marginBottom: 20 }}>
+            <Image
+              src="/logo-white.png"
+              alt="Whalen Financial"
+              width={160}
+              height={64}
+              style={{ objectFit: "contain", height: 40, width: "auto" }}
+            />
           </div>
           <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.75, color: "rgba(255,255,255,.4)", marginBottom: 24, maxWidth: 280 }}>
             A digital-first wealth management firm serving families nationwide. Investment management, retirement income, tax planning, estate planning, and asset protection — in one integrated plan.

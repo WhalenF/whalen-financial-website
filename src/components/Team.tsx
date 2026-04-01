@@ -1,22 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import Reveal from "./RevealOnScroll";
 
 const teamMembers = [
-  { initials: "AW", name: "Andrew Whalen", role: "CEO & Wealth Advisor", dept: "Leadership", color: "#0099CC", bg: "rgba(0,153,204,.22)" },
-  { initials: "JU", name: "John Urosevich", role: "COO", dept: "Leadership", color: "#0099CC", bg: "rgba(0,153,204,.22)" },
-  { initials: "VM", name: "Vanessa Medina", role: "Wealth Advisor", dept: "Advisory", color: "#2e9e5e", bg: "rgba(46,158,94,.18)" },
-  { initials: "MC", name: "Matthew Cuglietta", role: "Client Relations Associate", dept: "Client Services", color: "#b47a28", bg: "rgba(180,120,40,.18)" },
-  { initials: "KC", name: "Kirsten Creel", role: "Client Service Associate", dept: "Client Services", color: "#b47a28", bg: "rgba(180,120,40,.18)" },
-  { initials: "AM", name: "Antonio Middleton", role: "Marketing Manager", dept: "Operations", color: "#7840b4", bg: "rgba(120,60,180,.18)" },
-  { initials: "AZ", name: "Adrian Zarandin", role: "Client Service Associate", dept: "Client Services", color: "#b47a28", bg: "rgba(180,120,40,.18)" },
-  { initials: "NR", name: "Nessa Rodriguez", role: "Client Onboarding Specialist", dept: "Client Services", color: "#b47a28", bg: "rgba(180,120,40,.18)" },
-  { initials: "LP", name: "Luke Perry", role: "Portfolio Manager", dept: "Advisory", color: "#2e9e5e", bg: "rgba(46,158,94,.18)" },
-  { initials: "AW", name: "Al Whalen, EA CFP", role: "Tax Advisor", dept: "Tax", color: "#b43c3c", bg: "rgba(180,60,60,.18)" },
-  { initials: "DF", name: "Dawn Ferreira", role: "Tax Advisor", dept: "Tax", color: "#b43c3c", bg: "rgba(180,60,60,.18)" },
-  { initials: "MH", name: "Megan Healy", role: "Tax Advisor", dept: "Tax", color: "#b43c3c", bg: "rgba(180,60,60,.18)" },
-  { initials: "BI", name: "Brandon Isaacs", role: "Tax Preparer", dept: "Tax", color: "#b43c3c", bg: "rgba(180,60,60,.18)" },
-  { initials: "GV", name: "Griselda Vasquez-Salamanca", role: "Tax Preparer", dept: "Tax", color: "#b43c3c", bg: "rgba(180,60,60,.18)" },
+  { photo: "/team/andrew-whalen.png",    name: "Andrew Whalen",             role: "CEO & Wealth Advisor",        dept: "Leadership",      color: "#0099CC" },
+  { photo: "/team/john-urosevich.png",   name: "John Urosevich",            role: "COO",                         dept: "Leadership",      color: "#0099CC" },
+  { photo: "/team/vanessa-medina.png",   name: "Vanessa Medina",            role: "Wealth Advisor",              dept: "Advisory",        color: "#2e9e5e" },
+  { photo: "/team/luke-perry.png",       name: "Luke Perry",                role: "Portfolio Manager",           dept: "Advisory",        color: "#2e9e5e" },
+  { photo: "/team/matthew-cuglietta.png",name: "Matthew Cuglietta",         role: "Client Relations Associate",  dept: "Client Services", color: "#b47a28" },
+  { photo: "/team/kirsten-creel.png",    name: "Kirsten Creel",             role: "Client Service Associate",    dept: "Client Services", color: "#b47a28" },
+  { photo: "/team/antonio-middleton.png",name: "Antonio Middleton",         role: "Marketing Manager",           dept: "Operations",      color: "#7840b4" },
+  { photo: "/team/adrian-zarandin.png",  name: "Adrian Zarandin",           role: "Client Service Associate",    dept: "Client Services", color: "#b47a28" },
+  { photo: "/team/nessa-rodriguez.png",  name: "Nessa Rodriguez",           role: "Client Onboarding Specialist",dept: "Client Services", color: "#b47a28" },
+  { photo: "/team/al-whalen.png",        name: "Al Whalen, EA CFP",         role: "Tax Advisor",                 dept: "Tax",             color: "#b43c3c" },
+  { photo: "/team/dawn-ferreira.png",    name: "Dawn Ferreira",             role: "Tax Advisor",                 dept: "Tax",             color: "#b43c3c" },
+  { photo: "/team/megan-healy.png",      name: "Megan Healy",               role: "Tax Advisor",                 dept: "Tax",             color: "#b43c3c" },
+  { photo: "/team/brandon-isaacs.png",   name: "Brandon Isaacs",            role: "Tax Preparer",                dept: "Tax",             color: "#b43c3c" },
+  { photo: "/team/griselda-vasquez.png", name: "Griselda Vasquez-Salamanca",role: "Tax Preparer",                dept: "Tax",             color: "#b43c3c" },
 ];
 
 export default function Team() {
@@ -40,7 +41,7 @@ export default function Team() {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="team-grid">
         {teamMembers.map((m, i) => (
-          <Reveal key={`${m.initials}-${i}`} variant="scale" delay={["","d1","d2","d3","d4","d5"][i % 6] as any}>
+          <Reveal key={m.name} variant="scale" delay={["","d1","d2","d3","d4","d5"][i % 6] as any}>
             <div style={{
               background: "var(--card)", borderRadius: 4, overflow: "hidden",
               boxShadow: "var(--shadow)", border: "1px solid var(--rule)",
@@ -49,36 +50,25 @@ export default function Team() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-lg)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow)"; }}
             >
-              {/* Avatar */}
-              <div style={{
-                height: 180, display: "flex", alignItems: "center", justifyContent: "center",
-                position: "relative", overflow: "hidden",
-                background: "linear-gradient(135deg,#0d2137 0%,#12304f 100%)",
-              }}>
-                <div style={{
-                  width: 80, height: 80, borderRadius: "50%",
-                  background: m.bg, border: `3px solid ${m.color}30`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 300, color: m.color }}>{m.initials}</span>
-                </div>
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top,rgba(13,33,55,.7),transparent)", padding: "10px 16px 8px" }}>
+              {/* Photo */}
+              <div style={{ position: "relative", width: "100%", aspectRatio: "4/5", overflow: "hidden", background: "#0d2137" }}>
+                <Image
+                  src={m.photo}
+                  alt={m.name}
+                  fill
+                  sizes="(max-width:640px) 100vw, (max-width:1100px) 50vw, 25vw"
+                  style={{ objectFit: "cover", objectPosition: "top center" }}
+                />
+                {/* Dept badge overlay */}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top,rgba(13,33,55,.75),transparent)", padding: "24px 16px 10px" }}>
                   <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: ".16em", textTransform: "uppercase", color: m.color }}>{m.dept}</div>
                 </div>
               </div>
 
               {/* Info */}
-              <div style={{ padding: "24px 28px" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 500, color: "var(--ink)", marginBottom: 4 }}>{m.name}</div>
-                <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--teal)", marginBottom: 12 }}>{m.role}</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--text-xsoft)", fontSize: 13, fontStyle: "italic" }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-                    <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.2"/>
-                    <path d="M7 6.5 L7 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-                    <circle cx="7" cy="4.5" r=".8" fill="currentColor"/>
-                  </svg>
-                  Bio coming soon
-                </div>
+              <div style={{ padding: "20px 22px" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 500, color: "var(--ink)", marginBottom: 3, lineHeight: 1.2 }}>{m.name}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--teal)" }}>{m.role}</div>
               </div>
             </div>
           </Reveal>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,18 +28,14 @@ export default function Nav() {
     >
       {/* LOGO */}
       <Link href="/" style={{ textDecoration: "none" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <path d="M16 3 L28 9 L28 20 C28 26 22.5 30.5 16 32 C9.5 30.5 4 26 4 20 L4 9 Z" fill="none" stroke="#0099CC" strokeWidth="1.8"/>
-            <path d="M10 16 L14 22 L22 10" stroke="#0099CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 22, fontWeight: 600, letterSpacing: ".04em",
-            color: "#fff", textTransform: "uppercase",
-          }}>WHALEN</span>
-          <span style={{ fontSize: 10, fontWeight: 300, letterSpacing: ".14em", color: "rgba(255,255,255,.38)", textTransform: "uppercase", marginLeft: 4 }}>Financial</span>
-        </div>
+        <Image
+          src="/logo-white.png"
+          alt="Whalen Financial"
+          width={180}
+          height={72}
+          style={{ objectFit: "contain", height: 44, width: "auto" }}
+          priority
+        />
       </Link>
 
       {/* DESKTOP LINKS */}
