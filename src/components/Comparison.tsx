@@ -12,7 +12,7 @@ const CheckN = () => (
 );
 
 const rows = [
-  { feature: "Fiduciary obligation", whalen: "Always & legally required", trad: "Not always", wY: true },
+  { feature: "Acts in your best interest", whalen: "Always — it's how we're built", trad: "Not always", wY: true },
   { feature: "Retirement income planning", whalen: "Included — the Money Prism", trad: "Rarely coordinated", wY: true },
   { feature: "Proactive tax planning", whalen: "Year-round, integrated", trad: "Refer to CPA", wY: true },
   { feature: "Estate planning coordination", whalen: "Included, ongoing", trad: "Separate engagement", wY: true },

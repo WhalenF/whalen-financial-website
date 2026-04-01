@@ -3,7 +3,7 @@
 import Reveal from "./RevealOnScroll";
 
 const pillars = [
-  { num: "1", title: "Fiduciary, Always", body: "We are legally and ethically obligated to act in your best interest — not ours. No commissions, no hidden incentives. Every recommendation is one we'd make for our own family." },
+  { num: "1", title: "Your Interests, Always", body: "We are built to put you first — not our firm. No commissions, no hidden incentives. Every recommendation is one we'd make for our own family." },
   { num: "2", title: "Integrated Planning", body: "Your investments, taxes, retirement income, estate, and protection strategy are built as a single coordinated system — not five separate conversations with five different advisors." },
   { num: "3", title: "Proactive, Not Reactive", body: "We don't wait for you to call. We monitor your plan continuously and reach out when market shifts, tax law changes, or life events require action." },
   { num: "4", title: "Your Life, Your Plan", body: "No templates. Every engagement begins with deep discovery — your goals, your concerns, your legacy. The plan we build is yours alone." },
