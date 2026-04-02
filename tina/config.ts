@@ -35,7 +35,7 @@ export default defineConfig({
             label: "Reviews",
             list: true,
             ui: {
-              itemProps: (item: { name?: string }) => ({
+              itemProps: (item: any) => ({
                 label: item?.name || "New Review",
               }),
             },
@@ -83,7 +83,7 @@ export default defineConfig({
             label: "Team Members",
             list: true,
             ui: {
-              itemProps: (item: { name?: string }) => ({
+              itemProps: (item: any) => ({
                 label: item?.name || "Team Member",
               }),
             },
@@ -104,9 +104,6 @@ export default defineConfig({
                 type: "string",
                 name: "dept",
                 label: "Department",
-                ui: {
-                  component: "select",
-                },
                 options: ["Leadership", "Advisory", "Client Services", "Operations", "Tax"],
               },
               {
