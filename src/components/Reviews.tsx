@@ -1,37 +1,9 @@
 "use client";
 
 import Reveal from "./RevealOnScroll";
+import reviewsData from "../../content/reviews.json";
 
-const reviews = [
-  {
-    text: "Professionalism at its finest. Whalen Financial is like a financial Costco. It's a one stop shop with everything you need AND personality plus.",
-    initials: "HP", name: "Holly Pribyl", location: "Client, Las Vegas",
-  },
-  {
-    text: "It takes a special firm and a special team to have a happy client all the way in Florida. At Whalen Financial, I don't feel like \"just\" a client…they make me feel like family.",
-    initials: "Li", name: "Lianne", location: "Client, Florida",
-  },
-  {
-    text: "This is actually the fourth financial advisor I've gone to and I finally found the right fit for our family. The entire staff is professional, courteous, and most importantly informative.",
-    initials: "JM", name: "John Mangani", location: "Client, Las Vegas",
-  },
-  {
-    text: "After all of these years, a friend recommended Whalen Financial. We first met Nancy, Director of First Impressions — a delight. When we met Andrew Whalen, we knew we had found the right team.",
-    initials: "JD", name: "John DiFiore", location: "Client, Las Vegas, NV",
-  },
-  {
-    text: "Whalen Financial is an incredible, all-inclusive estate planning company. From Nancy's warm greeting to CEO Andrew Whalen — you will be hard pressed to find a team like this anywhere.",
-    initials: "TO", name: "Trevor Otsuka", location: "Client, Las Vegas, NV",
-  },
-  {
-    text: "Al Whalen takes the stress out of filing taxes and truly cares about his clients. He goes the extra mile. Everyone at his office has been extremely friendly, professional, and helpful.",
-    initials: "JL", name: "Jeff LaGesse", location: "Client, Las Vegas, NV",
-  },
-  {
-    text: "The Whalen Group is very professional and informing. Nancy will always call and leave a reminder for upcoming appointments. Very warm and positive welcome. Andrew is always ready to offer his expertise as well as offering his associates' inputs.",
-    initials: "GY", name: "Greg Yonai", location: "Client, Las Vegas",
-  },
-];
+const reviews = reviewsData.reviews;
 
 // Duplicate for seamless loop
 const doubled = [...reviews, ...reviews];
