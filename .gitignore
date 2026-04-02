@@ -42,4 +42,3 @@ next-env.d.ts
 
 # tinacms
 /tina/__generated__
-/public/admin
