@@ -43,6 +43,39 @@ export default function Reviews() {
         </Reveal>
       </div>
 
+      {/* Video Testimonials */}
+      <div style={{ padding: "0 56px", marginBottom: 56 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 960, margin: "0 auto" }} className="video-testimonials">
+          {[
+            { name: "Enstin", label: "Client Testimonial", src: "/testimonials/enstin.mp4" },
+            { name: "Perelli", label: "Client Testimonial", src: "/testimonials/perelli.mp4" },
+          ].map((v) => (
+            <Reveal key={v.name} variant="scale">
+              <div style={{ borderRadius: 6, overflow: "hidden", background: "var(--card)", border: "1px solid var(--rule)", boxShadow: "var(--shadow)" }}>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%", display: "block", aspectRatio: "16/9", objectFit: "cover" }}
+                >
+                  <source src={v.src} type="video/mp4" />
+                </video>
+                <div style={{ padding: "16px 20px", display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--teal-dim)", border: "1px solid var(--teal-border)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 600, color: "var(--teal)", flexShrink: 0 }}>
+                    {v.name[0]}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)" }}>{v.name}</div>
+                    <div style={{ fontSize: 12, color: "var(--text-soft)", marginTop: 1 }}>{v.label}</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
       {/* Scrolling marquee */}
       <Reveal>
         <div style={{ position: "relative", overflow: "hidden", width: "100%" }}>
@@ -96,6 +129,7 @@ export default function Reviews() {
 
       <style>{`
         #reviews { padding-left: 0 !important; padding-right: 0 !important; }
+        @media(max-width:640px){ .video-testimonials{grid-template-columns:1fr!important} }
         .reviews-track {
           display: flex;
           gap: 16px;

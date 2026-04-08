@@ -3,8 +3,8 @@ import Reveal from "./RevealOnScroll";
 const steps = [
   {
     num: "01", title: "Discovery Call", when: "Week 1",
-    body: "A 45–60 minute conversation with your advisor. We learn about you, your goals, and your concerns. You learn about us. No commitments, no pressure.",
-    bullets: ["We listen — you talk", "We explain our process & fees", "You decide if we're the right fit"],
+    body: "A 45–60 minute conversation where you meet with our team. We learn about you, your goals, and your concerns. You learn about us. No pressure.",
+    bullets: ["Meet with our team", "We explain our process & fees", "You decide if we're the right fit"],
   },
   {
     num: "02", title: "Plan Presentation", when: "Weeks 2–4",
@@ -100,7 +100,7 @@ export default function ClientExperience() {
             </div>
             <div>
               <p style={{ fontSize: 16, fontWeight: 300, color: "rgba(255,255,255,.65)", lineHeight: 1.82, marginBottom: 8, maxWidth: 680 }}>
-                This is where <strong style={{ color: "#0099CC" }}>WHALEN</strong> is different. Most advisors check in once a year. We&rsquo;re proactive — monitoring your plan continuously, reaching out when something changes, coordinating across every discipline so nothing slips through the cracks.
+                This is where <strong style={{ color: "#0099CC" }}>WHALEN</strong>{" "}is different. Most advisors check in once a year. We&rsquo;re proactive — monitoring your plan continuously, reaching out when something changes, coordinating across every discipline so nothing slips through the cracks.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24, marginTop: 20 }} className="ce-ongoing-cols">
                 {ongoingCols.map(col => (

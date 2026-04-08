@@ -21,7 +21,7 @@ const zones = [
     horizon: "Years 2–10",
     title: "Income & Preservation",
     body: "Your income engine. Bonds, dividend strategies, annuities, and income-producing assets that replenish the Blue Zone with predictable cash flow.",
-    tags: ["Fixed Income", "Dividends", "Annuities", "Income Funds"],
+    tags: ["Fixed Income", "Dividends", "Income Funds"],
   },
   {
     cls: "red",

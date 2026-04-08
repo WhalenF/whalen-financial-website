@@ -25,16 +25,16 @@ export default function Pledge() {
 
         <Reveal delay="d2">
           <p style={{ fontSize: 18, fontWeight: 300, lineHeight: 1.8, color: "rgba(255,255,255,.7)", marginBottom: 40 }}>
-            We don&rsquo;t believe in locking clients in. We believe in showing up so well that you never want to leave. Our commitment is built on three pillars that we hold ourselves accountable to, every year.
+            We don&rsquo;t believe in locking clients in. We believe in showing up every year so you never want to leave. Our commitment is built on three pillars.
           </p>
         </Reveal>
 
         <Reveal variant="scale" delay="d2">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2, marginBottom: 48 }} className="pledge-items">
             {[
-              { icon: "100%", title: "Transparent, Always", body: "We are legally and ethically obligated to put your interests first — no exceptions, no commissions, no hidden incentives." },
-              { icon: "3×", title: "Reviews Per Year", body: "Every four months, we review your plan, portfolio, and life changes — not once a year like most advisors." },
-              { icon: "0", title: "Surprises on Your Bill", body: "Transparent, flat-fee pricing. You know exactly what you pay and exactly what you get — before you sign anything." },
+              { icon: "100%", title: "Transparent, Always", body: "We are legally and ethically obligated to put your interests first — your intent, no exceptions." },
+              { icon: "3×", title: "Reviews Per Year", body: "Every four months, we review your plan, portfolio, and life changes." },
+              { icon: "0", title: "Surprises on Your Bill", body: "Transparent pricing. You know exactly what you pay and exactly what you get — before you sign anything." },
             ].map((p) => (
               <div key={p.title} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.07)", padding: "32px 24px", textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 40, fontWeight: 300, color: "var(--teal)", lineHeight: 1, marginBottom: 12 }}>{p.icon}</div>
@@ -46,7 +46,7 @@ export default function Pledge() {
         </Reveal>
 
         <Reveal delay="d3">
-          <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer" className="btn-primary">
+          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer" className="btn-primary">
             Hold Us to It — Schedule a Call
           </a>
         </Reveal>

@@ -13,8 +13,8 @@ export default function CTA() {
         Schedule a no-obligation discovery call. We&rsquo;ll listen to your goals and give you an honest picture of where you stand.
       </p>
       <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-        <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer" className="btn-white">
-          Schedule a Discovery Call
+        <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer" className="btn-white">
+          Schedule a Discovery Session
         </a>
         <a href="tel:+18666003030" className="btn-ghost-white">
           (866) 600-3030

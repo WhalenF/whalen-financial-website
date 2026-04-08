@@ -32,16 +32,30 @@ export default function Hero() {
   return (
     <section id="hero" style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg,#0d2137 0%,#0a1829 60%,#0d2a3f 100%)",
+      background: "#0a1829",
       display: "flex", flexDirection: "column", justifyContent: "center",
       position: "relative", overflow: "hidden",
       padding: "148px 56px 96px",
     }}>
-      {/* Grid BG */}
+      {/* Hero Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute", inset: 0, width: "100%", height: "100%",
+          objectFit: "cover", zIndex: 0, opacity: 0.45,
+        }}
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay */}
       <div style={{
         position: "absolute", inset: 0,
-        backgroundImage: "linear-gradient(rgba(0,153,204,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,153,204,.04) 1px,transparent 1px)",
-        backgroundSize: "72px 72px", opacity: .5, zIndex: 1,
+        background: "linear-gradient(135deg,rgba(10,24,41,.82) 0%,rgba(10,24,41,.6) 60%,rgba(13,42,63,.7) 100%)",
+        zIndex: 1,
       }}/>
 
       {/* Radial glow */}
@@ -63,6 +77,7 @@ export default function Hero() {
         >
           Your wealth,<br />
           <em style={{ fontStyle: "italic", color: "#0099CC" }}>organized for life.</em>
+          <span className="hero-cursor">|</span>
         </h1>
 
         <p style={{
@@ -77,7 +92,7 @@ export default function Hero() {
         <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}
           className="animate-fade-up delay-500"
         >
-          <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer" className="btn-primary">
+          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer" className="btn-primary">
             Schedule a Discovery Call
           </a>
           <a href="#comparison" className="btn-ghost">
@@ -118,6 +133,18 @@ export default function Hero() {
         @media(max-width:1100px){
           .hero-stats{display:none!important}
           #hero{padding:130px 24px 80px!important}
+        }
+        .hero-cursor {
+          display: inline-block;
+          color: #0099CC;
+          font-style: normal;
+          font-weight: 300;
+          margin-left: 4px;
+          animation: blink-cursor 1.1s step-end infinite;
+        }
+        @keyframes blink-cursor {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
         }
       `}</style>
     </section>

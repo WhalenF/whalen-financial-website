@@ -23,7 +23,7 @@ const services = [
       </svg>
     ),
     title: "Retirement Income Planning",
-    body: "We engineer income that lasts a lifetime. Social Security optimization, distribution sequencing, and guaranteed income strategies built around your retirement date.",
+    body: "We empower income with a goal to last a lifetime. Social Security optimization, distribution sequencing, and income strategies built around your retirement date.",
   },
   {
     num: "03",
@@ -46,7 +46,7 @@ const services = [
       </svg>
     ),
     title: "Estate Planning",
-    body: "Coordinate your trust, will, beneficiary designations, and titling with your financial plan. We work alongside your attorney to protect and transfer your legacy efficiently.",
+    body: "Coordinate your trust, will, beneficiary designations, and titling with your financial plan. We work alongside our network of attorneys to protect and transfer your legacy efficiently.",
   },
   {
     num: "05",

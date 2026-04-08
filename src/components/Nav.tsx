@@ -14,6 +14,10 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <nav
       style={{
@@ -27,13 +31,13 @@ export default function Nav() {
       }}
     >
       {/* LOGO */}
-      <Link href="/" style={{ textDecoration: "none" }}>
+      <Link href="/" onClick={scrollToTop} style={{ textDecoration: "none", cursor: "pointer" }}>
         <Image
           src="/logo-white.png"
           alt="Whalen Financial"
-          width={180}
-          height={72}
-          style={{ objectFit: "contain", height: 44, width: "auto" }}
+          width={220}
+          height={88}
+          style={{ objectFit: "contain", height: 54, width: "auto" }}
           priority
         />
       </Link>
@@ -60,7 +64,7 @@ export default function Nav() {
           </li>
         ))}
         <li>
-          <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer"
+          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer"
             style={{
               background: "#0099CC", color: "#fff", padding: "10px 20px",
               fontSize: 11, fontWeight: 600, letterSpacing: ".1em",
@@ -107,7 +111,7 @@ export default function Nav() {
               style={{ fontSize: 13, fontWeight: 500, letterSpacing: ".08em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", textDecoration: "none" }}
             >{l.label}</a>
           ))}
-          <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer"
+          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer"
             style={{ background: "#0099CC", color: "#fff", padding: "12px 24px", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", borderRadius: 2, textDecoration: "none", textAlign: "center", textTransform: "uppercase" }}
           >Schedule a Call</a>
         </div>

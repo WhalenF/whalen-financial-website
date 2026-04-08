@@ -57,11 +57,8 @@ export default function Book() {
 
           <Reveal variant="right" delay="d4">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center", marginTop: 6 }}>
-              <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer" className="btn-primary">
-                Get a Free Copy
-              </a>
-              <a href="https://calendly.com/whalenfinancial/discovery" target="_blank" rel="noreferrer" className="btn-outline">
-                Learn More
+              <a href="https://whalenfinancial.myshopify.com" target="_blank" rel="noreferrer" className="btn-primary">
+                Order Your Copy
               </a>
             </div>
           </Reveal>
