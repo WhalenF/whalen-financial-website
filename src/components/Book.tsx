@@ -57,7 +57,7 @@ export default function Book() {
 
           <Reveal variant="right" delay="d4">
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center", marginTop: 6 }}>
-              <a href="https://whalenfinancial.myshopify.com" target="_blank" rel="noreferrer" className="btn-primary">
+              <a href="https://confessionsofawealthmanager.com/products/confessions-of-a-wealth-manager-by-andrew-whalen" target="_blank" rel="noreferrer" className="btn-primary">
                 Order Your Copy
               </a>
             </div>
