@@ -46,7 +46,7 @@ export default function Pledge() {
         </Reveal>
 
         <Reveal delay="d3">
-          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer" className="btn-primary">
+          <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer" className="btn-primary">
             Hold Us to It — Schedule a Call
           </a>
         </Reveal>

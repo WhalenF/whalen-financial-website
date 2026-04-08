@@ -64,7 +64,7 @@ export default function Nav() {
           </li>
         ))}
         <li>
-          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer"
+          <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer"
             style={{
               background: "#0099CC", color: "#fff", padding: "10px 20px",
               fontSize: 11, fontWeight: 600, letterSpacing: ".1em",
@@ -111,7 +111,7 @@ export default function Nav() {
               style={{ fontSize: 13, fontWeight: 500, letterSpacing: ".08em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", textDecoration: "none" }}
             >{l.label}</a>
           ))}
-          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer"
+          <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer"
             style={{ background: "#0099CC", color: "#fff", padding: "12px 24px", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", borderRadius: 2, textDecoration: "none", textAlign: "center", textTransform: "uppercase" }}
           >Schedule a Call</a>
         </div>

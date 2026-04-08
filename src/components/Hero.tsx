@@ -92,7 +92,7 @@ export default function Hero() {
         <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}
           className="animate-fade-up delay-500"
         >
-          <a href="https://calendly.com/whalenfinancial/round-robin" target="_blank" rel="noreferrer" className="btn-primary">
+          <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer" className="btn-primary">
             Schedule a Discovery Call
           </a>
           <a href="#comparison" className="btn-ghost">
