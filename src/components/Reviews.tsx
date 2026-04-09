@@ -47,8 +47,8 @@ export default function Reviews() {
       <div style={{ padding: "0 56px", marginBottom: 64 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 960, margin: "0 auto" }} className="video-testimonials">
           {[
-            { name: "Enstin", label: "Client Testimonial", vimeoId: "1181744513" },
-            { name: "Perelli", label: "Client Testimonial", vimeoId: "1181744533" },
+            { name: "The Einsohns", label: "Client Testimonial", vimeoId: "1181744513" },
+            { name: "The Rosellis", label: "Client Testimonial", vimeoId: "1181744533" },
           ].map((v) => (
             <Reveal key={v.name} variant="scale">
               <div style={{ borderRadius: 6, overflow: "hidden", background: "var(--card)", border: "1px solid var(--rule)", boxShadow: "var(--shadow)" }}>
