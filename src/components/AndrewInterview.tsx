@@ -29,7 +29,7 @@ export default function AndrewInterview() {
           background: "#0a1829",
         }}>
           <iframe
-            src="https://www.youtube.com/embed/?enablejsapi=1&controls=1&rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/WXynoZta9UI?controls=1&rel=0&modestbranding=1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
