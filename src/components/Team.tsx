@@ -39,8 +39,53 @@ export default function Team() {
         </Reveal>
       </div>
 
+      {/* Andrew — featured row */}
+      {(() => {
+        const andrew = teamMembers[0];
+        const isOpen = expanded === andrew.name;
+        return (
+          <Reveal variant="scale">
+            <div
+              className="andrew-card"
+              style={{
+                background: "var(--card)", borderRadius: 4, overflow: "hidden",
+                boxShadow: isOpen ? "var(--shadow-lg)" : "var(--shadow)",
+                border: `1px solid ${isOpen ? andrew.color + "44" : "var(--rule)"}`,
+                transition: "transform .3s, box-shadow .3s, border-color .3s",
+                cursor: "pointer",
+                display: "grid",
+                gridTemplateColumns: "280px 1fr",
+                marginBottom: 16,
+              }}
+              onClick={() => setExpanded(isOpen ? null : andrew.name)}
+              onMouseEnter={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
+              onMouseLeave={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.transform = ""; }}
+            >
+              <div style={{ position: "relative", overflow: "hidden", background: "#0d2137" }}>
+                <Image
+                  src={andrew.photo}
+                  alt={andrew.name}
+                  fill
+                  sizes="280px"
+                  style={{ objectFit: "cover", objectPosition: "top center" }}
+                />
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top,rgba(13,33,55,.75),transparent)", padding: "24px 16px 10px" }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: ".16em", textTransform: "uppercase", color: andrew.color }}>{andrew.dept}</div>
+                </div>
+              </div>
+              <div style={{ padding: "36px 40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 500, color: "var(--ink)", marginBottom: 4, lineHeight: 1.2 }}>{andrew.name}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--teal)", marginBottom: 16 }}>{andrew.role}</div>
+                <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.8, color: "var(--text-mid)", margin: 0, maxWidth: 560 }}>{andrew.bio}</p>
+              </div>
+            </div>
+          </Reveal>
+        );
+      })()}
+
+      {/* Rest of team — 4-column grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="team-grid">
-        {teamMembers.map((m, i) => {
+        {teamMembers.slice(1).map((m, i) => {
           const isOpen = expanded === m.name;
           return (
             <Reveal key={m.name} variant="scale" delay={["","d1","d2","d3","d4","d5"][i % 6] as any}>
@@ -56,7 +101,6 @@ export default function Team() {
                 onMouseEnter={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; }}
                 onMouseLeave={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.transform = ""; }}
               >
-                {/* Photo */}
                 <div style={{ position: "relative", width: "100%", aspectRatio: "4/5", overflow: "hidden", background: "#0d2137" }}>
                   <Image
                     src={m.photo}
@@ -69,24 +113,12 @@ export default function Team() {
                     <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: ".16em", textTransform: "uppercase", color: m.color }}>{m.dept}</div>
                   </div>
                 </div>
-
-                {/* Info */}
                 <div style={{ padding: "20px 22px" }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 500, color: "var(--ink)", marginBottom: 3, lineHeight: 1.2 }}>{m.name}</div>
                   <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--teal)", marginBottom: isOpen ? 14 : 0 }}>{m.role}</div>
-
-                  {/* Expandable bio */}
-                  <div style={{
-                    maxHeight: isOpen ? 200 : 0,
-                    overflow: "hidden",
-                    transition: "max-height .45s cubic-bezier(0.16,1,0.3,1)",
-                  }}>
-                    <p style={{ fontSize: 13, fontWeight: 300, lineHeight: 1.75, color: "var(--text-mid)", margin: 0, paddingTop: 2 }}>
-                      {m.bio}
-                    </p>
+                  <div style={{ maxHeight: isOpen ? 200 : 0, overflow: "hidden", transition: "max-height .45s cubic-bezier(0.16,1,0.3,1)" }}>
+                    <p style={{ fontSize: 13, fontWeight: 300, lineHeight: 1.75, color: "var(--text-mid)", margin: 0, paddingTop: 2 }}>{m.bio}</p>
                   </div>
-
-                  {/* Toggle hint */}
                   <div style={{ marginTop: 12, display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 500, color: isOpen ? m.color : "var(--text-xsoft)", letterSpacing: ".06em", textTransform: "uppercase", transition: "color .2s" }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ transition: "transform .3s", transform: isOpen ? "rotate(180deg)" : "rotate(0)" }}>
                       <path d="M2 4 L6 8 L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -104,6 +136,8 @@ export default function Team() {
         @media(max-width:1100px){
           .team-intro{grid-template-columns:1fr!important;gap:28px!important}
           .team-grid{grid-template-columns:repeat(2,1fr)!important}
+          .andrew-card{grid-template-columns:1fr!important}
+          .andrew-card > div:first-child{height:280px;position:relative}
           #team{padding:80px 24px!important}
         }
         @media(max-width:640px){
