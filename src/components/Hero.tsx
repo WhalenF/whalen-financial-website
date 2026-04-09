@@ -110,8 +110,8 @@ export default function Hero() {
 
       {/* Stats */}
       <div style={{
-        position: "absolute", bottom: 56, right: 56, zIndex: 2,
-        display: "flex", gap: 48,
+        position: "absolute", bottom: 56, left: "50%", transform: "translateX(-50%)", zIndex: 2,
+        display: "flex", gap: 64,
       }}
         className="animate-fade-up delay-800 hero-stats"
       >
@@ -120,10 +120,10 @@ export default function Hero() {
           { to: 5,  sup: "",  label: "Planning Disciplines" },
           { to: 1,  sup: "",  label: "Integrated Plan" },
         ].map((s) => (
-          <div key={s.label}>
+          <div key={s.label} style={{ textAlign: "center" }}>
             <div style={{
-              fontFamily: "var(--font-display)", fontSize: 44,
-              fontWeight: 300, color: "#fff", lineHeight: 1,
+              fontFamily: s.to === 1 ? "var(--font-body)" : "var(--font-display)",
+              fontSize: 44, fontWeight: 300, color: "#fff", lineHeight: 1,
             }}>
               <CountUp to={s.to} />
               <span style={{ color: "#0099CC" }}>{s.sup}</span>
