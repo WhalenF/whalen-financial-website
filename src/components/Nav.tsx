@@ -33,7 +33,7 @@ export default function Nav() {
       {/* LOGO */}
       <Link href="/" onClick={scrollToTop} style={{ textDecoration: "none", cursor: "pointer" }}>
         <Image
-          src="/logo-white.png"
+          src="/logo-blue.png"
           alt="Whalen Financial"
           width={220}
           height={88}

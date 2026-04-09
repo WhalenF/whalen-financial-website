@@ -52,7 +52,7 @@ export default function MoneyPrism() {
         <div>
           <Reveal variant="left" delay="d2">
             <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.82, color: "rgba(255,255,255,.7)", marginTop: 18 }}>
-              Most portfolios are designed for accumulation. Retirement demands something different: a deliberate, time-segmented strategy that delivers income when you need it, growth when you don&rsquo;t, and certainty throughout.
+              Most portfolios are designed for accumulation. Retirement demands something different. A deliberate, time-segmented strategy that delivers income when you need it, growth when you don&rsquo;t, and confidence throughout.
             </p>
           </Reveal>
           <Reveal variant="left" delay="d3">

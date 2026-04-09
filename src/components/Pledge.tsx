@@ -25,7 +25,7 @@ export default function Pledge() {
 
         <Reveal delay="d2">
           <p style={{ fontSize: 18, fontWeight: 300, lineHeight: 1.8, color: "rgba(255,255,255,.7)", marginBottom: 40 }}>
-            We don&rsquo;t believe in locking clients in. We believe in showing up every year so you never want to leave. Our commitment is built on three pillars.
+            We don&rsquo;t believe in locking clients in. We believe in showing up every year, so you never want to leave. Our commitment is built on three pillars.
           </p>
         </Reveal>
 

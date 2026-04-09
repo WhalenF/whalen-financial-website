@@ -5,22 +5,13 @@ import Image from "next/image";
 const complianceLinks = [
   { label: "Form CRS", href: "https://app.box.com/file/2159109164775?s=ll8b4o2hoyik8a2mvq614lzlexmrmub3" },
   { label: "Privacy Policy", href: "https://app.box.com/file/2159120667968?s=q69csgtxxyaa6n7moh55a4xcjc912xob" },
-  { label: "ADV 2A", href: "https://app.box.com/file/2159101531159?s=704wyfrm7nhe86201amrxpujh1mc1j4j" },
-  { label: "ADV 2B", href: "https://app.box.com/file/2160760942843?s=yt0cvpsaxej2zkbrumhkd83a6eypnczi" },
-  { label: "Disclosures", href: "https://whalenfinancial.com/disclaimer" },
   { label: "SEC Adviser Info", href: "https://www.adviserinfo.sec.gov" },
-];
-
-const navLinks = [
-  { head: "Planning", links: ["Investment Management","Retirement Income","Tax Planning","Estate Planning","Asset Protection"] },
-  { head: "Company", links: ["About Us","Our Team","The Whalen Plan","Client Experience","Careers"] },
-  { head: "Resources", links: ["The Book","Client Portal","Schedule a Call","(866) 600-3030","info@whalenfinancial.com"] },
 ];
 
 export default function Footer() {
   return (
     <footer style={{ background: "#080f1a", padding: "72px 56px 40px", color: "rgba(255,255,255,.5)" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 60, paddingBottom: 52, borderBottom: "1px solid rgba(255,255,255,.07)", marginBottom: 36 }} className="footer-top">
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 60, paddingBottom: 52, borderBottom: "1px solid rgba(255,255,255,.07)", marginBottom: 36 }} className="footer-top">
         {/* Brand */}
         <div>
           <div style={{ marginBottom: 20 }}>
@@ -46,22 +37,35 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Nav columns */}
-        {navLinks.map(col => (
-          <div key={col.head}>
-            <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".18em", textTransform: "uppercase", color: "rgba(255,255,255,.28)", marginBottom: 18 }}>{col.head}</div>
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
-              {col.links.map(l => (
-                <li key={l}>
-                  <a href="#" style={{ fontSize: 14, fontWeight: 300, color: "rgba(255,255,255,.5)", textDecoration: "none", transition: "color .2s" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#0099CC")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.5)")}
-                  >{l}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* Company */}
+        <div>
+          <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".18em", textTransform: "uppercase", color: "rgba(255,255,255,.28)", marginBottom: 18 }}>Company</div>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+            <li><a href="/careers" style={{ fontSize: 14, fontWeight: 300, color: "rgba(255,255,255,.5)", textDecoration: "none", transition: "color .2s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "#0099CC")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.5)")}
+            >Careers</a></li>
+          </ul>
+        </div>
+
+        {/* Resources */}
+        <div>
+          <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".18em", textTransform: "uppercase", color: "rgba(255,255,255,.28)", marginBottom: 18 }}>Resources</div>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+            {[
+              { label: "Client Portal", href: "https://whalenfinancial.com/client-portal" },
+              { label: "Schedule a Call", href: "https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" },
+              { label: "Disclosures", href: "/disclosures" },
+            ].map(l => (
+              <li key={l.label}>
+                <a href={l.href} style={{ fontSize: 14, fontWeight: 300, color: "rgba(255,255,255,.5)", textDecoration: "none", transition: "color .2s" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#0099CC")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.5)")}
+                >{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* Compliance links */}
@@ -82,13 +86,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 12, color: "rgba(255,255,255,.25)", flexWrap: "wrap", gap: 16 }}>
+      <div style={{ fontSize: 12, color: "rgba(255,255,255,.25)" }}>
         <span>&copy; {new Date().getFullYear()} WHALEN Financial. All rights reserved.</span>
-        <div style={{ display: "flex", gap: 24 }}>
-          <a href="/privacy" style={{ color: "rgba(255,255,255,.25)", textDecoration: "none" }}>Privacy Policy</a>
-          <a href="/terms" style={{ color: "rgba(255,255,255,.25)", textDecoration: "none" }}>Terms of Use</a>
-          <a href="https://www.adviserinfo.sec.gov" target="_blank" rel="noreferrer" style={{ color: "rgba(255,255,255,.25)", textDecoration: "none" }}>SEC Adviser Info</a>
-        </div>
       </div>
 
       <style>{`
