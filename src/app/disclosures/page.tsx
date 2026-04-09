@@ -86,7 +86,7 @@ export default function DisclosuresPage() {
                 { label: "Privacy Policy", href: "https://app.box.com/file/2159120667968?s=q69csgtxxyaa6n7moh55a4xcjc912xob" },
                 { label: "SEC Investment Adviser Public Disclosure", href: "https://www.adviserinfo.sec.gov" },
               ].map((doc) => (
-                <a key={doc.label} href={doc.href} target="_blank" rel="noreferrer" style={{
+                <a key={doc.label} href={doc.href} target="_blank" rel="noreferrer" className="doc-link" style={{
                   display: "inline-flex", alignItems: "center", gap: 10,
                   fontSize: 14, fontWeight: 400, color: "#0099CC", textDecoration: "none",
                   padding: "14px 20px",
@@ -95,8 +95,6 @@ export default function DisclosuresPage() {
                   background: "rgba(0,153,204,.06)",
                   transition: "background .2s, border-color .2s",
                 }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(0,153,204,.12)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,153,204,.5)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "rgba(0,153,204,.06)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,153,204,.25)"; }}
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h7l3 3v7H2V2z" stroke="#0099CC" strokeWidth="1.4" strokeLinejoin="round"/><path d="M9 2v3h3" stroke="#0099CC" strokeWidth="1.4" strokeLinejoin="round"/></svg>
                   {doc.label}
@@ -118,6 +116,7 @@ export default function DisclosuresPage() {
       </main>
 
       <style>{`
+        .doc-link:hover { background: rgba(0,153,204,.12) !important; border-color: rgba(0,153,204,.5) !important; }
         @media(max-width:768px){
           header, main { padding-left: 24px !important; padding-right: 24px !important; }
         }
