@@ -20,7 +20,7 @@ export default function Reviews() {
         </Reveal>
         <Reveal delay="d2">
           <p style={{ fontSize: 17, fontWeight: 300, color: "var(--text-mid)", maxWidth: 500, margin: "16px auto 0", lineHeight: 1.8 }}>
-            Don&rsquo;t take our word for it — hear from the families we serve.
+            Don&rsquo;t take our word for it. Hear from the families we serve.
           </p>
         </Reveal>
 

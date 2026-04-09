@@ -2,9 +2,9 @@ import Image from "next/image";
 import Reveal from "./RevealOnScroll";
 
 const bullets = [
-  "How to tell if your advisor is actually working for you — or for their firm.",
+  "How to tell if your advisor is actually working for you, or for their firm.",
   "The questions every investor should ask before trusting anyone with their money.",
-  "What integrated wealth management actually looks like — and why it matters for your retirement.",
+  "What integrated wealth management actually looks like, and why it matters for your retirement.",
 ];
 
 export default function Book() {
@@ -42,7 +42,7 @@ export default function Book() {
           </Reveal>
           <Reveal variant="right" delay="d2">
             <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.8, color: "var(--text-mid)", marginBottom: 28 }}>
-              The wealth management industry is full of jargon, conflicts of interest, and advice designed to benefit advisors — not clients. This book changes that.
+              The wealth management industry is full of jargon, conflicts of interest, and advice designed to benefit advisors, not clients. This book changes that.
             </p>
           </Reveal>
 

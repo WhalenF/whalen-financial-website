@@ -12,12 +12,12 @@ const CheckN = () => (
 );
 
 const rows = [
-  { feature: "Acts in your best interest", whalen: "Always — it's how we're built", trad: "Not always", wY: true },
-  { feature: "Retirement income planning", whalen: "Included — the Money Prism", trad: "Rarely coordinated", wY: true },
+  { feature: "Acts in your best interest", whalen: "Always, it's how we're built", trad: "Not always", wY: true },
+  { feature: "Retirement income planning", whalen: "Included: the Money Prism", trad: "Rarely coordinated", wY: true },
   { feature: "Proactive tax planning", whalen: "Year-round, integrated", trad: "Refer to CPA", wY: true },
   { feature: "Estate planning coordination", whalen: "Included, ongoing", trad: "Separate engagement", wY: true },
   { feature: "Transparent, flat fees", whalen: "No hidden charges", trad: "Commissions common", wY: true },
-  { feature: "Virtual — serve you anywhere", whalen: "Nationwide, digital-first", trad: "Local office required", wY: true },
+  { feature: "Virtual, serve you anywhere", whalen: "Nationwide, digital-first", trad: "Local office required", wY: true },
   { feature: "Personalized One Page Plan", whalen: "Every client receives one", trad: "Generic reports only", wY: true },
 ];
 

@@ -6,7 +6,7 @@ const pillars = [
   { num: "1", title: "Your Interests, Always", body: "We are built to put you first. Every recommendation is one we'd make for our own family." },
   { num: "2", title: "Integrated Planning", body: "Your investments, taxes, retirement income, estate, and protection strategy are built as a single coordinated system across every discipline." },
   { num: "3", title: "Proactive, Not Reactive", body: "We don't wait for you to call. We monitor your plan continuously and reach out when market shifts, tax law changes, or life events require action." },
-  { num: "4", title: "Your Life, Your Plan", body: "No templates. Every engagement begins with deep discovery — your goals, your concerns, your legacy. The plan we build is yours alone." },
+  { num: "4", title: "Your Life, Your Plan", body: "No templates. Every engagement begins with deep discovery, your goals, your concerns, your legacy. The plan we build is yours alone." },
   { num: "5", title: "Transparent Fees", body: "Our fee-based model means you know exactly what you pay and exactly what you get." },
 ];
 

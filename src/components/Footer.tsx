@@ -33,7 +33,7 @@ export default function Footer() {
             />
           </div>
           <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.75, color: "rgba(255,255,255,.4)", marginBottom: 24, maxWidth: 280 }}>
-            A digital-first wealth management firm serving families nationwide. Investment management, retirement income, tax planning, estate planning, and asset protection — in one integrated plan.
+            A digital-first wealth management firm serving families nationwide. Investment management, retirement income, tax planning, estate planning, and asset protection, in one integrated plan.
           </p>
           <div style={{ fontSize: 14, fontWeight: 300, color: "rgba(255,255,255,.5)", marginBottom: 6 }}>
             <a href="tel:+18666003030" style={{ color: "rgba(255,255,255,.5)", textDecoration: "none" }}>(866) 600-3030</a>

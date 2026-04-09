@@ -34,7 +34,7 @@ export default function Team() {
         </div>
         <Reveal delay="d2">
           <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.8, color: "var(--text-mid)", maxWidth: 600 }}>
-            We got into this business for the same reason you&rsquo;re here — because financial security matters, and the people who help you build it matter even more.
+            We got into this business for the same reason you&rsquo;re here, because financial security matters, and the people who help you build it matter even more.
           </p>
         </Reveal>
       </div>

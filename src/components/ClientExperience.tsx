@@ -8,7 +8,7 @@ const steps = [
   },
   {
     num: "02", title: "Plan Presentation", when: "Weeks 2–4",
-    body: "We build and present your custom Whalen Plan — your complete financial picture, gaps, opportunities, projections, and a personalized retirement roadmap.",
+    body: "We build and present your custom Whalen Plan, your complete financial picture, gaps, opportunities, projections, and a personalized retirement roadmap.",
     bullets: ["Full financial snapshot", "Retirement income projections", "Money Prism zone breakdown"],
   },
   {
@@ -37,7 +37,7 @@ export default function ClientExperience() {
         </Reveal>
         <Reveal delay="d2">
           <p style={{ fontSize: 17, fontWeight: 300, color: "var(--text-mid)", maxWidth: 540, margin: "18px auto 0", lineHeight: 1.8 }}>
-            From your first call to your ongoing relationship — no surprises, no hidden steps.
+            From your first call to your ongoing relationship, no surprises, no hidden steps.
           </p>
         </Reveal>
       </div>
@@ -78,7 +78,7 @@ export default function ClientExperience() {
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".18em", textTransform: "uppercase", color: "var(--teal)", marginBottom: 10 }}>Your Plan Deliverable</div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 500, color: "var(--ink)", marginBottom: 10 }}>The Whalen One Page Plan</div>
             <div style={{ fontSize: 15, fontWeight: 300, lineHeight: 1.82, color: "var(--text-mid)", marginBottom: 18 }}>
-              Every client receives a personalized One Page Plan — a comprehensive financial blueprint that distills your entire wealth picture into one clear, actionable document. Your Freedom Number, retirement income projections, Money Prism allocation, tax strategy, Social Security timing, estate planning checklist, and asset protection analysis — all on one page.
+              Every client receives a personalized One Page Plan, a comprehensive financial blueprint that distills your entire wealth picture into one clear, actionable document. Your Freedom Number, retirement income projections, Money Prism allocation, tax strategy, Social Security timing, estate planning checklist, and asset protection analysis, all on one page.
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
               {["Freedom Number","Retirement Projections","Money Prism Allocation","Tax Strategy","Social Security Timing","Estate Checklist","Asset Protection","Updated Annually"].map(t => (
@@ -100,7 +100,7 @@ export default function ClientExperience() {
             </div>
             <div>
               <p style={{ fontSize: 16, fontWeight: 300, color: "rgba(255,255,255,.65)", lineHeight: 1.82, marginBottom: 8, maxWidth: 680 }}>
-                This is where <strong style={{ color: "#0099CC" }}>WHALEN</strong>{" "}is different. Most advisors check in once a year. We&rsquo;re proactive — monitoring your plan continuously, reaching out when something changes, coordinating across every discipline so nothing slips through the cracks.
+                This is where <strong style={{ color: "#0099CC" }}>WHALEN</strong>{" "}is different. Most advisors check in once a year. We&rsquo;re proactive, monitoring your plan continuously, reaching out when something changes, coordinating across every discipline so nothing slips through the cracks.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24, marginTop: 20 }} className="ce-ongoing-cols">
                 {ongoingCols.map(col => (

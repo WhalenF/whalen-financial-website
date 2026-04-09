@@ -11,7 +11,7 @@ const services = [
       </svg>
     ),
     title: "Investment Management",
-    body: "Institutional-quality portfolio construction tailored to your risk tolerance, time horizon, and income needs. We monitor, rebalance, and adjust — so you don't have to.",
+    body: "Institutional-quality portfolio construction tailored to your risk tolerance, time horizon, and income needs. We monitor, rebalance, and adjust, so you don't have to.",
   },
   {
     num: "02",
@@ -57,7 +57,7 @@ const services = [
       </svg>
     ),
     title: "Asset Protection",
-    body: "Insurance analysis, liability mitigation, and structural strategies that shield your wealth from unexpected risks — illness, lawsuits, long-term care, and market catastrophe.",
+    body: "Insurance analysis, liability mitigation, and structural strategies that shield your wealth from unexpected risks: illness, lawsuits, long-term care, and market catastrophe.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function Services() {
         </div>
         <Reveal delay="d2">
           <div style={{ fontSize: 16, fontWeight: 300, lineHeight: 1.85, color: "var(--text-mid)", borderLeft: "2.5px solid var(--teal-border)", paddingLeft: 28 }}>
-            Most financial advisors manage investments and call it financial planning. We don&rsquo;t. <strong style={{ color: "#0099CC" }}>WHALEN</strong> coordinates five distinct disciplines simultaneously — so every decision in one area reinforces all the others. The result is a plan far more powerful than its parts.
+            Most financial advisors manage investments and call it financial planning. We don&rsquo;t. <strong style={{ color: "#0099CC" }}>WHALEN</strong> coordinates five distinct disciplines simultaneously, so every decision in one area reinforces all the others. The result is a plan far more powerful than its parts.
           </div>
         </Reveal>
       </div>

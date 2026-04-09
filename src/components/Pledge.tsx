@@ -32,9 +32,9 @@ export default function Pledge() {
         <Reveal variant="scale" delay="d2">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2, marginBottom: 48 }} className="pledge-items">
             {[
-              { icon: "100%", title: "Transparent, Always", body: "We are legally and ethically obligated to put your interests first — your intent, no exceptions." },
+              { icon: "100%", title: "Transparent, Always", body: "We are legally and ethically obligated to put your interests first, your intent, no exceptions." },
               { icon: "3×", title: "Reviews Per Year", body: "Every four months, we review your plan, portfolio, and life changes." },
-              { icon: "0", title: "Surprises on Your Bill", body: "Transparent pricing. You know exactly what you pay and exactly what you get — before you sign anything." },
+              { icon: "0", title: "Surprises on Your Bill", body: "Transparent pricing. You know exactly what you pay and exactly what you get, before you sign anything." },
             ].map((p) => (
               <div key={p.title} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.07)", padding: "32px 24px", textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 40, fontWeight: 300, color: "var(--teal)", lineHeight: 1, marginBottom: 12 }}>{p.icon}</div>
