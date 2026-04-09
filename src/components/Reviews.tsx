@@ -43,6 +43,39 @@ export default function Reviews() {
         </Reveal>
       </div>
 
+      {/* Video Testimonials */}
+      <div style={{ padding: "0 56px", marginBottom: 64 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 960, margin: "0 auto" }} className="video-testimonials">
+          {[
+            { name: "Enstin", label: "Client Testimonial", vimeoId: "1181744513" },
+            { name: "Perelli", label: "Client Testimonial", vimeoId: "1181744533" },
+          ].map((v) => (
+            <Reveal key={v.name} variant="scale">
+              <div style={{ borderRadius: 6, overflow: "hidden", background: "var(--card)", border: "1px solid var(--rule)", boxShadow: "var(--shadow)" }}>
+                <div style={{ position: "relative", aspectRatio: "16/9" }}>
+                  <iframe
+                    src={`https://player.vimeo.com/video/${v.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                    allowFullScreen
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+                    title={`${v.name} — ${v.label}`}
+                  />
+                </div>
+                <div style={{ padding: "14px 20px", display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 34, height: 34, borderRadius: "50%", background: "var(--teal-dim)", border: "1px solid var(--teal-border)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 600, color: "var(--teal)", flexShrink: 0 }}>
+                    {v.name[0]}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)" }}>{v.name}</div>
+                    <div style={{ fontSize: 12, color: "var(--text-soft)", marginTop: 1 }}>{v.label}</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
       {/* Scrolling marquee */}
       <Reveal>
         <div style={{ position: "relative", overflow: "hidden", width: "100%" }}>
@@ -96,6 +129,7 @@ export default function Reviews() {
 
       <style>{`
         #reviews { padding-left: 0 !important; padding-right: 0 !important; }
+        @media(max-width:640px){ .video-testimonials{grid-template-columns:1fr!important} }
         .reviews-track {
           display: flex;
           gap: 16px;
