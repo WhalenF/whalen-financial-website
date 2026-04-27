@@ -74,6 +74,10 @@ export default function Reviews() {
             </Reveal>
           ))}
         </div>
+        <p style={{ fontSize: 11, fontWeight: 400, color: "var(--text-xsoft)", textAlign: "center", maxWidth: 720, margin: "20px auto 0", lineHeight: 1.7, fontStyle: "italic" }}>
+          Testimonials reflect the individual experiences of real WHALEN Financial clients. Clients were not compensated for their statements. Individual results vary and are not indicative of future performance. See our{" "}
+          <a href="/disclosures" style={{ color: "var(--text-soft)", textDecoration: "underline" }}>full disclosures</a>.
+        </p>
       </div>
 
       {/* Scrolling marquee */}
