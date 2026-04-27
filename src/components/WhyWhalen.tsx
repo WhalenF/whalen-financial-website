@@ -62,7 +62,7 @@ export default function WhyWhalen() {
             ].map((m) => (
               <Reveal key={m.label} variant="scale">
                 <div style={{ background: "var(--card)", padding: "28px 24px", borderRadius: 4, border: "1px solid var(--rule)", boxShadow: "var(--shadow)" }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 44, fontWeight: 300, color: "var(--ink)", lineHeight: 1 }}>
+                  <div style={{ fontFamily: m.num === "1" ? "var(--font-body)" : "var(--font-display)", fontSize: 44, fontWeight: 300, color: "var(--ink)", lineHeight: 1 }}>
                     {m.num}<sup style={{ fontSize: 20, verticalAlign: "super" }}>{m.sup}</sup>
                   </div>
                   <div style={{ fontSize: 13, fontWeight: 400, color: "var(--text-soft)", marginTop: 5, lineHeight: 1.4 }}>{m.label}</div>
