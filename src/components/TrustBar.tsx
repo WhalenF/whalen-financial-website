@@ -1,8 +1,9 @@
 export default function TrustBar() {
-  const items = [
-    "Forbes Finance Council",
-    "Kiplinger",
-    "Inc. 5000",
+  const logos = [
+    { alt: "Inc.", src: "https://assets.cdn.filesafe.space/Qv2BQcwLXnadkgGYT0P1/media/69649914f8a93bd66fe4ced5.png", height: 28 },
+    { alt: "AdvisorHub", src: "https://assets.cdn.filesafe.space/Qv2BQcwLXnadkgGYT0P1/media/69649914c7683b144fc2d467.png", height: 22 },
+    { alt: "Forbes Finance Council", src: "https://assets.cdn.filesafe.space/Qv2BQcwLXnadkgGYT0P1/media/6964991498efbd6f1a0907f8.png", height: 36 },
+    { alt: "Kiplinger", src: "https://cdn.mos.cms.futurecdn.net/flexiimages/c9yj8luxnb1764668254.svg", height: 24 },
   ];
 
   return (
@@ -19,14 +20,15 @@ export default function TrustBar() {
       }}>Recognized by</div>
       <div style={{ width: 1, height: 26, background: "var(--rule)", flexShrink: 0 }} />
       <div style={{ display: "flex", alignItems: "center", gap: 36, flexWrap: "wrap" }}>
-        {items.map((item) => (
-          <div key={item} style={{
-            fontSize: 14, fontWeight: 400, color: "var(--text-mid)",
-            display: "flex", alignItems: "center", gap: 8,
-          }}>
-            <div style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--teal)", flexShrink: 0 }} />
-            {item}
-          </div>
+        {logos.map((logo) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={logo.alt}
+            src={logo.src}
+            alt={logo.alt}
+            height={logo.height}
+            style={{ height: logo.height, width: "auto", objectFit: "contain", opacity: 0.7 }}
+          />
         ))}
       </div>
       <style>{`@media(max-width:1100px){#trust{padding:18px 24px!important;gap:18px!important}}`}</style>
