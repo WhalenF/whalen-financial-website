@@ -11,7 +11,7 @@ export default function TrustBar() {
       background: "var(--warm)",
       borderBottom: "1px solid var(--rule)",
       padding: "22px 56px",
-      display: "flex", alignItems: "center",
+      display: "flex", alignItems: "center", justifyContent: "center",
       gap: 40, flexWrap: "wrap",
     }}>
       <div style={{
@@ -27,7 +27,7 @@ export default function TrustBar() {
             src={logo.src}
             alt={logo.alt}
             height={logo.height}
-            style={{ height: logo.height, width: "auto", objectFit: "contain", opacity: 0.7 }}
+            style={{ height: logo.height, width: "auto", objectFit: "contain", filter: "grayscale(100%)", opacity: 0.55 }}
           />
         ))}
       </div>
