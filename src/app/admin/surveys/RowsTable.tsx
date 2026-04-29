@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
-import type { SurveyRow } from "@/lib/graph/excel";
+import type { SurveyRow } from "@/lib/db/queries";
 
 // ─── Question text (from /welcome SurveyForm) ──────────────────────────
 

@@ -1,5 +1,5 @@
 import { referralSchema } from "@/lib/forms/schemas";
-import { appendReferralRow } from "@/lib/graph/excel";
+import { appendReferralRow } from "@/lib/db/queries";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
     });
   } catch (err) {
-    console.error("[refer] graph error:", err);
+    console.error("[refer] db error:", err);
     return Response.json(
       { ok: false, error: "Submission failed — please contact us directly" },
       { status: 500 }

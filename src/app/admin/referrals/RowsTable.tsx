@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
-import type { ReferralRow } from "@/lib/graph/excel";
+import type { ReferralRow } from "@/lib/db/queries";
 
 // ─── Style helpers ──────────────────────────────────────────────────────
 

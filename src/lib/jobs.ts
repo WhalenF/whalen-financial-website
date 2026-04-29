@@ -1,4 +1,9 @@
-import { kv } from "@vercel/kv";
+/**
+ * Job posting types — shared by the public Careers page, the admin CRUD
+ * surface, and the database queries module. The actual persistence
+ * functions (`getJobs` / `setJobs` / `getJob`) live in `@/lib/db/queries`
+ * and are re-exported here so existing call sites keep working.
+ */
 
 export interface JobSection {
   title: string;
@@ -26,23 +31,4 @@ export interface Job {
   applySubject: string;
 }
 
-const KEY = "jobs:list" as const;
-
-export async function getJobs(): Promise<Job[]> {
-  try {
-    const value = await kv.get<Job[]>(KEY);
-    return value ?? [];
-  } catch (err) {
-    console.warn("[jobs] KV read failed:", err);
-    return [];
-  }
-}
-
-export async function setJobs(jobs: Job[]): Promise<void> {
-  await kv.set(KEY, jobs);
-}
-
-export async function getJob(slug: string): Promise<Job | undefined> {
-  const all = await getJobs();
-  return all.find((j) => j.slug === slug);
-}
+export { getJobs, setJobs, getJob } from "@/lib/db/queries";

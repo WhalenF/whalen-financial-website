@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { listReferralRows, listSurveyRows } from "@/lib/graph/excel";
-import type { ReferralRow, SurveyRow } from "@/lib/graph/excel";
+import { listReferralRows, listSurveyRows } from "@/lib/db/queries";
+import type { ReferralRow, SurveyRow } from "@/lib/db/queries";
 import { getJobs } from "@/lib/jobs";
 import type { Job } from "@/lib/jobs";
 

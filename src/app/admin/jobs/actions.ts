@@ -46,7 +46,7 @@ export async function saveJob(
       ok: false,
       errors: {},
       message:
-        "Job storage is not configured. Set KV_REST_API_URL and KV_REST_API_TOKEN.",
+        "Job storage is not configured. Set DATABASE_URL to your Railway Postgres connection string.",
     };
   }
 

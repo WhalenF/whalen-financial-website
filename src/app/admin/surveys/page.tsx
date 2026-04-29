@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { listSurveyRows } from "@/lib/graph/excel";
-import type { SurveyRow } from "@/lib/graph/excel";
+import { listSurveyRows } from "@/lib/db/queries";
+import type { SurveyRow } from "@/lib/db/queries";
 import RowsTable from "./RowsTable";
 
 export const metadata: Metadata = {
@@ -117,7 +117,7 @@ export default async function AdminSurveysPage() {
               lineHeight: 1.6,
             }}
           >
-            Could not load surveys — check Graph API configuration.
+            Could not load surveys — check Railway Postgres configuration.
           </p>
           <details>
             <summary

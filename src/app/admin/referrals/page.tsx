@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { listReferralRows } from "@/lib/graph/excel";
-import type { ReferralRow } from "@/lib/graph/excel";
+import { listReferralRows } from "@/lib/db/queries";
+import type { ReferralRow } from "@/lib/db/queries";
 import RowsTable from "./RowsTable";
 
 export const metadata: Metadata = {
@@ -117,7 +117,7 @@ export default async function AdminReferralsPage() {
               lineHeight: 1.6,
             }}
           >
-            Could not load referrals — check Graph API configuration.
+            Could not load referrals — check Railway Postgres configuration.
           </p>
           <details>
             <summary
