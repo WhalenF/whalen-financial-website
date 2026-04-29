@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import AndrewInterview from "@/components/AndrewInterview";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import MoneyPrism from "@/components/MoneyPrism";
@@ -19,7 +18,6 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
-      <AndrewInterview />
       <TrustBar />
       <Services />
       <MoneyPrism />

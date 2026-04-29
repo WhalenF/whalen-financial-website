@@ -39,54 +39,9 @@ export default function Team() {
         </Reveal>
       </div>
 
-      {/* Leadership — featured row */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }} className="leadership-row">
-        {teamMembers.filter(m => m.dept === "Leadership").map((leader) => {
-          const isOpen = expanded === leader.name;
-          return (
-            <Reveal key={leader.name} variant="scale">
-              <div
-                className="leader-card"
-                style={{
-                  background: "var(--card)", borderRadius: 4, overflow: "hidden",
-                  boxShadow: isOpen ? "var(--shadow-lg)" : "var(--shadow)",
-                  border: `1px solid ${isOpen ? leader.color + "44" : "var(--rule)"}`,
-                  transition: "transform .3s, box-shadow .3s, border-color .3s",
-                  cursor: "pointer",
-                  display: "grid",
-                  gridTemplateColumns: "220px 1fr",
-                  height: "100%",
-                }}
-                onClick={() => setExpanded(isOpen ? null : leader.name)}
-                onMouseEnter={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
-                onMouseLeave={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.transform = ""; }}
-              >
-                <div style={{ position: "relative", overflow: "hidden", background: "#0d2137" }}>
-                  <Image
-                    src={leader.photo}
-                    alt={leader.name}
-                    fill
-                    sizes="220px"
-                    style={{ objectFit: "cover", objectPosition: "top center" }}
-                  />
-                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top,rgba(13,33,55,.75),transparent)", padding: "24px 16px 10px" }}>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: ".16em", textTransform: "uppercase", color: leader.color }}>{leader.dept}</div>
-                  </div>
-                </div>
-                <div style={{ padding: "28px 30px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 500, color: "var(--ink)", marginBottom: 4, lineHeight: 1.2 }}>{leader.name}</div>
-                  <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--teal)", marginBottom: 14 }}>{leader.role}</div>
-                  <p style={{ fontSize: 13, fontWeight: 300, lineHeight: 1.75, color: "var(--text-mid)", margin: 0 }}>{leader.bio}</p>
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
-
-      {/* Rest of team — 4-column grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="team-grid">
-        {teamMembers.filter(m => m.dept !== "Leadership").map((m, i) => {
+      {/* Team — uniform 7-column grid */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 16 }} className="team-grid">
+        {teamMembers.map((m, i) => {
           const isOpen = expanded === m.name;
           return (
             <Reveal key={m.name} variant="scale" delay={["","d1","d2","d3","d4","d5"][i % 6] as any}>
@@ -107,7 +62,7 @@ export default function Team() {
                     src={m.photo}
                     alt={m.name}
                     fill
-                    sizes="(max-width:640px) 100vw, (max-width:1100px) 50vw, 25vw"
+                    sizes="(max-width:640px) 50vw, (max-width:1100px) 25vw, 14vw"
                     style={{ objectFit: "cover", objectPosition: "top center" }}
                   />
                   <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top,rgba(13,33,55,.75),transparent)", padding: "24px 16px 10px" }}>
@@ -136,14 +91,11 @@ export default function Team() {
       <style>{`
         @media(max-width:1100px){
           .team-intro{grid-template-columns:1fr!important;gap:28px!important}
-          .team-grid{grid-template-columns:repeat(2,1fr)!important}
-          .leadership-row{grid-template-columns:1fr!important}
-          .leader-card{grid-template-columns:1fr!important}
-          .leader-card > div:first-child{height:260px;position:relative}
+          .team-grid{grid-template-columns:repeat(4,1fr)!important}
           #team{padding:80px 24px!important}
         }
         @media(max-width:640px){
-          .team-grid{grid-template-columns:1fr!important}
+          .team-grid{grid-template-columns:repeat(2,1fr)!important}
         }
       `}</style>
     </section>
