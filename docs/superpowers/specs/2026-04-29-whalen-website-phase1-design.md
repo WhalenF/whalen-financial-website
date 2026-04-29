@@ -42,18 +42,18 @@ Out (deferred to Phase 2):
 
 ---
 
-## 2. Hero background video — self-hosted MP4 with reliable loop
+## 2. Hero background video — Vercel Blob hosted, reliable loop
 
 **Current problem:** `src/components/Hero.tsx:42-58` embeds the same YouTube video as a background using an iframe with `&loop=1&playlist=WXynoZta9UI`. YouTube's loop flag is unreliable — when the player throttles (backgrounded tab, low-power mode, mobile autoplay restrictions), looping silently stops.
 
 **Change:**
 - Replace the `<iframe>` with a native `<video>` element using attributes `autoPlay`, `loop`, `muted`, `playsInline`, `preload="auto"`, sized to cover the section like the iframe did.
-- Source: `/public/hero-bg.mp4` — placed by Andrew; we expect ≤8 MB, ~1080p (1920×1080), H.264 encoding for broadest browser support, no audio track.
+- Source: **Vercel Blob URL** — `https://cum8xbv9knswgukd.public.blob.vercel-storage.com/Meet%20Whalen%20Financial.mp4`. Asset uploaded by Andrew (2026-04-29). Hosting via Vercel Blob keeps the repo small and serves through Vercel's CDN with no extra config.
 - Optional `poster="/hero-bg-poster.jpg"` (single-frame still) to avoid a black flash before the video starts; drop in if the asset is provided, otherwise omit.
 - Keep the existing dark gradient overlay and radial glow on top — both already render in `zIndex: 1` above the video container.
 - Drop the YouTube iframe entirely and the `WXynoZta9UI` ID reference from this component.
 
-**Fallback when MP4 is missing:** If `/public/hero-bg.mp4` is not present at build time, the `<video>` element will simply render no source and the hero falls back to the existing solid `#0a1829` background — no error, no broken layout. Andrew can drop the file in and redeploy when ready. Implementation should not block on the asset being committed.
+**Fallback when video is unreachable:** If the Vercel Blob URL ever fails to load (network error, asset deleted, etc.), the `<video>` element renders nothing and the hero falls back to the existing solid `#0a1829` background — no error, no broken layout.
 
 **Sizing:** Use `position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center` on the `<video>`. This keeps the video filling the section regardless of viewport ratio, mirroring what the YouTube iframe was approximating with `width: 177.78vh; height: 100vh`.
 
@@ -267,7 +267,7 @@ No persistent storage. No auth. No external services beyond Vercel's hosting and
 - `src/app/api/survey/route.ts`
 - `src/app/api/refer/route.ts`
 - `src/lib/forms/schemas.ts`
-- `public/hero-bg.mp4` (provided by Andrew, may land later)
+- (Hero video asset hosted on Vercel Blob — not in repo. URL: `https://cum8xbv9knswgukd.public.blob.vercel-storage.com/Meet%20Whalen%20Financial.mp4`)
 
 **Modified files:**
 - `src/app/page.tsx` — remove `AndrewInterview` import + usage
@@ -301,7 +301,7 @@ No automated tests in Phase 1 — repo currently has none and adding a test fram
 
 ## Open items for implementation
 
-- `/public/hero-bg.mp4` (and optional poster) source asset — Andrew to drop in repo or supply
+- ~~`/public/hero-bg.mp4` source asset~~ — RESOLVED 2026-04-29: video hosted at Vercel Blob URL `https://cum8xbv9knswgukd.public.blob.vercel-storage.com/Meet%20Whalen%20Financial.mp4`
 - Portal page support email address (placeholder: `clientservices@whalenfinancial.com`)
 - Portal feature list copy (what specifically to highlight in the trust strip)
 - Whether to include a portal FAQ section or keep the page lean
