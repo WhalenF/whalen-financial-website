@@ -37,7 +37,7 @@ export default function Hero() {
       position: "relative", overflow: "hidden",
       padding: "148px 56px 96px",
     }}>
-      {/* Hero Video Background — self-hosted MP4 */}
+      {/* Hero Video Background — Vercel Blob */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0 }}>
         <video
           autoPlay
@@ -46,7 +46,7 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/hero-bg-poster.jpg"
-          src="/hero-bg.mp4"
+          src="https://cum8xbv9knswgukd.public.blob.vercel-storage.com/Meet%20Whalen%20Financial.mp4"
           style={{
             position: "absolute",
             inset: 0,
