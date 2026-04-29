@@ -64,18 +64,14 @@ export default function Nav() {
           </li>
         ))}
         <li>
-          <a
-            href="https://login.orionadvisor.com/login.html?g=2c1efb79-1e0c-4d35-913a-81c5ce4a58b0"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontSize: 11.5, fontWeight: 500, letterSpacing: ".09em",
-              textTransform: "uppercase", color: "rgba(255,255,255,.72)",
-              textDecoration: "none", transition: "color .2s",
-            }}
+          <Link href="/portal" style={{
+            fontSize: 11.5, fontWeight: 500, letterSpacing: ".09em",
+            textTransform: "uppercase", color: "rgba(255,255,255,.72)",
+            textDecoration: "none", transition: "color .2s",
+          }}
             onMouseEnter={e => (e.currentTarget.style.color = "#0099CC")}
             onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.72)")}
-          >Client Login →</a>
+          >Client Login →</Link>
         </li>
         <li>
           <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer"
@@ -125,13 +121,9 @@ export default function Nav() {
               style={{ fontSize: 13, fontWeight: 500, letterSpacing: ".08em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", textDecoration: "none" }}
             >{l.label}</a>
           ))}
-          <a
-            href="https://login.orionadvisor.com/login.html?g=2c1efb79-1e0c-4d35-913a-81c5ce4a58b0"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileOpen(false)}
+          <Link href="/portal" onClick={() => setMobileOpen(false)}
             style={{ fontSize: 13, fontWeight: 500, letterSpacing: ".08em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", textDecoration: "none" }}
-          >Client Login →</a>
+          >Client Login →</Link>
           <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer"
             style={{ background: "#0099CC", color: "#fff", padding: "12px 24px", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", borderRadius: 2, textDecoration: "none", textAlign: "center", textTransform: "uppercase" }}
           >Schedule a Call</a>
