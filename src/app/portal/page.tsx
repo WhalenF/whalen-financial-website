@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const ORION_LOGIN_URL =
+const PORTAL_LOGIN_URL =
   "https://login.orionadvisor.com/login.html?g=2c1efb79-1e0c-4d35-913a-81c5ce4a58b0";
 
 const TRUST_ITEMS = [
@@ -72,7 +72,7 @@ export default function PortalPage() {
           }}
         />
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
           <div
             style={{
               fontSize: 12,
@@ -111,12 +111,12 @@ export default function PortalPage() {
               lineHeight: 1.72,
               color: "rgba(255,255,255,.8)",
               maxWidth: 620,
-              marginBottom: 44,
+              margin: "0 auto 44px",
             }}
           >
-            Log in to your Whalen-branded Orion portal to view balances, track
-            performance, access statements, and exchange secure messages with
-            your advisor. Available 24/7 from any device.
+            Log in to your Whalen Portal to view balances, track performance,
+            access statements, and exchange secure messages with your advisor.
+            Available 24/7 from any device.
           </p>
 
           <div
@@ -124,11 +124,12 @@ export default function PortalPage() {
               display: "flex",
               gap: 24,
               alignItems: "center",
+              justifyContent: "center",
               flexWrap: "wrap",
             }}
           >
             <a
-              href={ORION_LOGIN_URL}
+              href={PORTAL_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

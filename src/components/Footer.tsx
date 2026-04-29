@@ -53,7 +53,7 @@ export default function Footer() {
           <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".18em", textTransform: "uppercase", color: "rgba(255,255,255,.28)", marginBottom: 18 }}>Resources</div>
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
             {[
-              { label: "Client Portal", href: "https://whalenfinancial.com/client-portal" },
+              { label: "Client Portal", href: "/portal" },
               { label: "Schedule a Call", href: "https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" },
               { label: "Disclosures", href: "/disclosures" },
             ].map(l => (
