@@ -1,3 +1,5 @@
+import { kv } from "@vercel/kv";
+
 export interface JobSection {
   title: string;
   items: string[];
@@ -24,8 +26,23 @@ export interface Job {
   applySubject: string;
 }
 
-export const jobs: Job[] = [];
+const KEY = "jobs:list" as const;
 
-export function getJob(slug: string): Job | undefined {
-  return jobs.find((j) => j.slug === slug);
+export async function getJobs(): Promise<Job[]> {
+  try {
+    const value = await kv.get<Job[]>(KEY);
+    return value ?? [];
+  } catch (err) {
+    console.warn("[jobs] KV read failed:", err);
+    return [];
+  }
+}
+
+export async function setJobs(jobs: Job[]): Promise<void> {
+  await kv.set(KEY, jobs);
+}
+
+export async function getJob(slug: string): Promise<Job | undefined> {
+  const all = await getJobs();
+  return all.find((j) => j.slug === slug);
 }

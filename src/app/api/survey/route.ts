@@ -1,4 +1,5 @@
 import { surveySchema } from "@/lib/forms/schemas";
+import { appendSurveyRow } from "@/lib/graph/excel";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -19,6 +20,19 @@ export async function POST(request: Request) {
     );
   }
 
-  console.log("[survey]", JSON.stringify(parsed.data));
+  try {
+    await appendSurveyRow({
+      ...parsed.data,
+      submitted_at: new Date().toISOString(),
+      ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
+    });
+  } catch (err) {
+    console.error("[survey] graph error:", err);
+    return Response.json(
+      { ok: false, error: "Submission failed — please contact us directly" },
+      { status: 500 }
+    );
+  }
+
   return Response.json({ ok: true });
 }

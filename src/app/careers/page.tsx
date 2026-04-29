@@ -1,13 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { jobs } from "@/lib/jobs";
+import { getJobs } from "@/lib/jobs";
 
 export const metadata: Metadata = {
   title: "Careers — WHALEN Financial",
   description: "Join the WHALEN Financial team. We're a digital-first wealth management firm serving families nationwide.",
 };
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  const jobs = await getJobs();
   const hasOpenings = jobs.length > 0;
 
   return (

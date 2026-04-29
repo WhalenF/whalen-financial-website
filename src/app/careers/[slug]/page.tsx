@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { jobs, getJob } from "@/lib/jobs";
+import { getJobs, getJob } from "@/lib/jobs";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const jobs = await getJobs();
   return jobs.map((job) => ({ slug: job.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const job = getJob(slug);
+  const job = await getJob(slug);
   if (!job) return {};
   return {
     title: `${job.title} — WHALEN Financial`,
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function JobPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const job = getJob(slug);
+  const job = await getJob(slug);
   if (!job) notFound();
 
   return (
