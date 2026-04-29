@@ -64,6 +64,16 @@ export default function Nav() {
           </li>
         ))}
         <li>
+          <Link href="/portal" style={{
+            fontSize: 11.5, fontWeight: 500, letterSpacing: ".09em",
+            textTransform: "uppercase", color: "rgba(255,255,255,.72)",
+            textDecoration: "none", transition: "color .2s",
+          }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#0099CC")}
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.72)")}
+          >Client Login →</Link>
+        </li>
+        <li>
           <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer"
             style={{
               background: "#0099CC", color: "#fff", padding: "10px 20px",
@@ -111,6 +121,9 @@ export default function Nav() {
               style={{ fontSize: 13, fontWeight: 500, letterSpacing: ".08em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", textDecoration: "none" }}
             >{l.label}</a>
           ))}
+          <Link href="/portal" onClick={() => setMobileOpen(false)}
+            style={{ fontSize: 13, fontWeight: 500, letterSpacing: ".08em", textTransform: "uppercase", color: "rgba(255,255,255,.8)", textDecoration: "none" }}
+          >Client Login →</Link>
           <a href="https://calendly.com/confessions-of-a-wealth-manager/your-retirement-money-prism-diagnostic-clone" target="_blank" rel="noreferrer"
             style={{ background: "#0099CC", color: "#fff", padding: "12px 24px", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", borderRadius: 2, textDecoration: "none", textAlign: "center", textTransform: "uppercase" }}
           >Schedule a Call</a>

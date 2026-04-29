@@ -37,24 +37,25 @@ export default function Hero() {
       position: "relative", overflow: "hidden",
       padding: "148px 56px 96px",
     }}>
-      {/* Hero Video Background — YouTube */}
+      {/* Hero Video Background — self-hosted MP4 */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0 }}>
-        <iframe
-          src="https://www.youtube.com/embed/WXynoZta9UI?autoplay=1&mute=1&loop=1&playlist=WXynoZta9UI&controls=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1"
-          allow="autoplay; encrypted-media"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/hero-bg-poster.jpg"
+          src="/hero-bg.mp4"
           style={{
             position: "absolute",
-            top: "50%", left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "177.78vh",
-            height: "100vh",
-            minWidth: "100%",
-            minHeight: "56.25vw",
-            border: "none",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
             opacity: 0.45,
-            pointerEvents: "none",
           }}
-          title="Hero background video"
         />
       </div>
 
